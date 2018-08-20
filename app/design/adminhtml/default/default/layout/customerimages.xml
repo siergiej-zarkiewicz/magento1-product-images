@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_catalog_product_edit>
+        <reference name="left">
+            <reference name="product_tabs">
+                <block type="customerimages/adminhtml_catalog_product_edit_tab_image" name="tab_customerimages_image" template="customerimages/catalog/product/image.phtml">
+                    <block type="customerimages/adminhtml_catalog_product_edit_tab_image_list" name="tab_image_list" />
+                </block>
+                <action method="addTab">
+                    <name>customerimages</name>
+                    <block>tab_customerimages_image</block>
+                </action>
+            </reference>
+        </reference>
+    </adminhtml_catalog_product_edit>
+    <adminhtml_image_index>
+        <reference name="content">
+            <block type="customerimages/adminhtml_catalog_image" name="catalog_images" />
+        </reference>
+    </adminhtml_image_index>
+    <adminhtml_image_edit>
+        <reference name="content">
+            <block type="customerimages/adminhtml_catalog_image_edit" name="edit_image_tabs" />
+        </reference>
+    </adminhtml_image_edit>
+    <adminhtml_image_new>
+        <reference name="content">
+            <block type="customerimages/adminhtml_catalog_image_new" name="new_image_tabs" />
+        </reference>
+    </adminhtml_image_new>
+</layout>

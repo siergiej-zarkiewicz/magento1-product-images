@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <customerimages translate="title" module="customerimages">
+                    <sort_order>10</sort_order>
+                    <title>Customer Images</title>
+                    <action>adminhtml/image/</action>
+                </customerimages>
+            </children>
+        </catalog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <image translate="title" module="customerimages">
+                        <title>Image Controller</title>
+                        <sort_order>300</sort_order>
+                        <children>
+                            <customerimages translate="title">
+                                <title>Customer Images</title>
+                                <sort_order>1</sort_order>
+                            </customerimages>
+                        </children>
+                    </image>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

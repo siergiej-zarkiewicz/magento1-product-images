@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Sz_CustomerImages>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Sz_CustomerImages>
+    </modules>
+</config>

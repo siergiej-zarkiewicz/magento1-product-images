@@ -1,0 +1,57 @@
+<?php
+/**
+ * Product images form
+ *
+ * @see Sz_CustomerImages_Block_Product_View_Images
+ * @var Sz_CustomerImages_Block_Product_View_Images $this
+ */
+?>
+<?php $_product = $this->getProduct() ?>
+<h2><?= $this->__('Customer images') ?></h2>
+<form method="post" action="<?= $this->getFormActionUrl() ?>" id="customer-images-form" enctype="multipart/form-data">
+    <input type="hidden" name="product_id" id="product_id" value="<?= $_product->getId() ?>">
+    <div class="form-add">
+        <label><?= $this->__('Add Your Images:') ?></label>
+        <div class="input-box">
+            <input type="file" name="image" class="input-file" size="50"> &nbsp;&nbsp;
+        </div>
+        <br>
+        <button type="button" onclick="javascript: szcustomerimg_upload('customer-images-form');"
+                class="button upload-button" title="<?= $this->__('Upload Image') ?>">
+            <span>
+                <span><?= $this->__('Upload Image') ?></span>
+            </span>
+        </button>
+    </div>
+</form>
+<br>
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="product-img-box">
+    <div class="more-views">
+        <h2><?php echo $this->__('Customer Images') ?></h2>
+        <ul>
+            <?php foreach ($this->getGalleryImages() as $_image): ?>
+                <li>
+                    <a href="#"
+                       onclick="popWin('<?php echo $_image->getUrl() ?>', 'gallery', 'width=300,height=300,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;"
+                       title="<?php echo $this->escapeHtml($_image->getLabel()) ?>"><img
+                                src="<?= $_image->getUrl() ?>" width="56" height="56"
+                                alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>"/></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>
+
+<script>
+    function szcustomerimg_upload(generalId) {
+        var form = $('customer-images-form');
+        var validator = new Validation(form);
+        if (validator.validate()) {
+            form.submit();
+        }
+    }
+</script>
+
+
