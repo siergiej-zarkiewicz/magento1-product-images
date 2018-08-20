@@ -1,4 +1,4 @@
-# magento-product-images
+# Customer Product Images Magento Module
 Customer Product Images Magento Module
 Magento module allows the customer to upload own picture of the product:
 1. Product card have input enabling you to upload image.
